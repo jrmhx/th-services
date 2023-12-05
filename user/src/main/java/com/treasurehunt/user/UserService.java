@@ -3,7 +3,7 @@ package com.treasurehunt.user;
 import org.springframework.stereotype.Service;
 
 @Service
-public record UserService() {
+public record UserService(UserRepository userRepository) {
     public void registerUser(UserRegistrationRequest request){
         User user = User.builder()
                 .firstName(request.firstName())
@@ -13,7 +13,7 @@ public record UserService() {
 
         //TODO: check if email valid
         //TODO: check if email not taken
-        //TODO: store in db
+        userRepository.save(user);
     }
 }
 
