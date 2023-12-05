@@ -8,10 +8,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 @Slf4j
 @RestController
-@RequestMapping("api/v1/users")
+@RequestMapping("api/v1/user")
 public record UserController(UserService userService) {
     @PostMapping
     public void registerUser(@RequestBody UserRegistrationRequest userRegistrationRequest){
         log.info("new user registeration {}", userRegistrationRequest);
+        userService.registerUser(userRegistrationRequest);
     }
 }
