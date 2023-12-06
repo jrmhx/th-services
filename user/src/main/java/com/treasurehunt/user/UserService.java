@@ -1,9 +1,15 @@
 package com.treasurehunt.user;
 
+import com.treasurehunt.clients.fraud.FraudCheckResponse;
+import com.treasurehunt.clients.fraud.FraudClient;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
-public record UserService(UserRepository userRepository) {
+@AllArgsConstructor
+public class UserService {
+    private final UserRepository userRepository;
+    private final FraudClient fraudClient;
     public void registerUser(UserRegistrationRequest request){
         User user = User.builder()
                 .firstName(request.firstName())
@@ -13,7 +19,10 @@ public record UserService(UserRepository userRepository) {
 
         //TODO: check if email valid
         //TODO: check if email not taken
-        userRepository.save(user);
+        userRepository.saveAndFlush(user);
+        // check if user is fraudster
+        FraudCheckResponse fraudCheckResponse = fraudClient.isFraudster(user.getId());
+        //send notification
     }
 }
 

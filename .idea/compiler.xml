@@ -9,7 +9,11 @@
         <outputRelativeToContentRoot value="true" />
         <module name="user" />
         <module name="fraud" />
+        <module name="clients" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="client" target="20" />
+    </bytecodeTargetLevel>
   </component>
 </project>
