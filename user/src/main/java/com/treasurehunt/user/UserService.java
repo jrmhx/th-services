@@ -22,6 +22,9 @@ public class UserService {
         userRepository.saveAndFlush(user);
         // check if user is fraudster
         FraudCheckResponse fraudCheckResponse = fraudClient.isFraudster(user.getId());
+        if (fraudCheckResponse.isFraudster()) {
+            throw new IllegalStateException("fraudster");
+        }
         //send notification
     }
 }
