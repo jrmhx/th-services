@@ -25,6 +25,12 @@ public class NotificationController {
 
     @PostMapping(path = "/greeting")
     public NotificationResponse sendGreeting(@RequestBody NotificationRequest request){
+        // simulate slow notification services
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            log.info("sending a slow greeting");
+        }
         log.info("send greeting email to {}", request.sendToEmail());
         Boolean result = notificationService.sendGreeting(request);
         if (!result) {

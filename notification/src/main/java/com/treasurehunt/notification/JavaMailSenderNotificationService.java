@@ -25,6 +25,7 @@ public class JavaMailSenderNotificationService implements NotificationService{
         message.setTo(request.sendToEmail());
         message.setSubject("Greeting from Treasure Hunt!");
         message.setText("Welcome to Treasure Hunt!");
+        // currently haven't set up gmail stmp config
         try {
             mailSender.send(message);
             notificationSendState = NotificationSendState.SEND;
@@ -42,7 +43,6 @@ public class JavaMailSenderNotificationService implements NotificationService{
                         .sentAt(LocalDateTime.now())
                         .build()
         );
-        //return notificationSendState.equals(NotificationSendState.SEND);
         return true;
     }
 }

@@ -6,7 +6,7 @@ import com.treasurehunt.clients.notification.NotificationClient;
 import com.treasurehunt.clients.notification.NotificationRequest;
 import com.treasurehunt.clients.notification.NotificationResponse;
 import com.treasurehunt.clients.user.UserRegistrationRequest;
-import com.treasurehunt.clients.user.UserResponse;
+import com.treasurehunt.amqp.RabbitMQMsgProducer;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +18,7 @@ public class UserService {
     private final UserRepository userRepository;
     private final FraudClient fraudClient;
     private final NotificationClient notificationClient;
+    private final RabbitMQMsgProducer rabbitMQMsgProducer;
     public void registerUser(UserRegistrationRequest request){
         User user = User.builder()
                 .firstName(request.firstName())
@@ -34,12 +35,25 @@ public class UserService {
             throw new IllegalStateException("fraudster");
         }
         // send notification
-        NotificationResponse notificationResponse = notificationClient.sendGreeting(
-                new NotificationRequest(user.getId(), user.getEmail())
+
+        //use rabbitmq
+        NotificationRequest notificationRequest = new NotificationRequest(
+                user.getId(),
+                user.getEmail()
         );
-        if (!notificationResponse.success()) {
-            throw new IllegalStateException("notify failure");
-        }
+        rabbitMQMsgProducer.publish(
+                notificationRequest,
+                "internal.exchange",
+                "internal.notification.routing-key"
+        );
+
+        //dont use rabbitmq
+//        NotificationResponse notificationResponse = notificationClient.sendGreeting(
+//                new NotificationRequest(
+//                        user.getId(),
+//                        user.getEmail()
+//                )
+//        );
     }
 
 

@@ -11,6 +11,7 @@
         <module name="notification" />
         <module name="clients" />
         <module name="fraud" />
+        <module name="amqp" />
         <module name="user" />
         <module name="eureka-server" />
         <module name="exceptions" />

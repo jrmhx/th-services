@@ -20,6 +20,7 @@
       <module>apigw</module>
       <module>notification</module>
       <module>exceptions</module>
+      <module>amqp</module>
   </modules>
 
   <properties>
