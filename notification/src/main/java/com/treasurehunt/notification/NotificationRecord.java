@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Data
 @Builder
@@ -27,6 +28,7 @@ public class NotificationRecord {
     private String sendToEmail;
     private String subject;
     private String content;
+    private LocalDateTime sentAt;
     @Enumerated(EnumType.STRING)
     private NotificationSendState sendState;
 }

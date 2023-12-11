@@ -7,6 +7,8 @@ import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
+
 @Service("javaMailSender")
 @AllArgsConstructor
 public class JavaMailSenderNotificationService implements NotificationService{
@@ -16,19 +18,19 @@ public class JavaMailSenderNotificationService implements NotificationService{
 
     @Override
     public Boolean sendGreeting(NotificationRequest request) {
-        NotificationSendState notificationSendState = NotificationSendState.SEND;
+        NotificationSendState notificationSendState;
 
         SimpleMailMessage message = new SimpleMailMessage();
         message.setFrom("jez.hsing.dev@gmail.com");
         message.setTo(request.sendToEmail());
         message.setSubject("Greeting from Treasure Hunt!");
         message.setText("Welcome to Treasure Hunt!");
-//        try {
-//            mailSender.send(message);
-//            notificationSendState = NotificationSendState.SEND;
-//        } catch (MailException e){
-//            notificationSendState = NotificationSendState.FAILED;
-//        }
+        try {
+            mailSender.send(message);
+            notificationSendState = NotificationSendState.SEND;
+        } catch (MailException e){
+            notificationSendState = NotificationSendState.FAILED;
+        }
 
         notificationRecordRepository.saveAndFlush(
                 NotificationRecord.builder()
@@ -37,8 +39,10 @@ public class JavaMailSenderNotificationService implements NotificationService{
                         .subject("Greeting from Treasure Hunt!")
                         .content("Welcome to Treasure Hunt!")
                         .sendState(notificationSendState)
+                        .sentAt(LocalDateTime.now())
                         .build()
         );
-        return notificationSendState.equals(NotificationSendState.SEND);
+        //return notificationSendState.equals(NotificationSendState.SEND);
+        return true;
     }
 }
