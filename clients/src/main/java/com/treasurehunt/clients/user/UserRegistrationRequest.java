@@ -1,4 +1,4 @@
-package com.treasurehunt.user;
+package com.treasurehunt.clients.user;
 
 public record UserRegistrationRequest(
         String firstName,

@@ -8,10 +8,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="apigw" />
+        <module name="notification" />
         <module name="clients" />
+        <module name="fraud" />
         <module name="user" />
         <module name="eureka-server" />
-        <module name="fraud" />
+        <module name="exceptions" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

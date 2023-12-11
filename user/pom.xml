@@ -42,6 +42,12 @@
             <scope>compile</scope>
         </dependency>
         <dependency>
+            <groupId>com.treasurehunt</groupId>
+            <artifactId>exceptions</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-sleuth</artifactId>
         </dependency>

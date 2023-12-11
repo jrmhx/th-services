@@ -18,6 +18,8 @@
     <module>clients</module>
     <module>eureka-server</module>
       <module>apigw</module>
+      <module>notification</module>
+      <module>exceptions</module>
   </modules>
 
   <properties>

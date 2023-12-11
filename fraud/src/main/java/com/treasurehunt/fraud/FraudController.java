@@ -17,7 +17,7 @@ public class FraudController {
         this.fraudCheckService = fraudCheckService;
     }
 
-    @GetMapping(path = "check/{userId}")
+    @GetMapping(path = "/check/{userId}")
     public FraudCheckResponse isFraudster(
             @PathVariable("userId")
             Integer userId
