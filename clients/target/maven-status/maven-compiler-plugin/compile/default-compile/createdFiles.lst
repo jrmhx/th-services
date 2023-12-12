@@ -1,0 +1,9 @@
+com/treasurehunt/clients/user/UserResponse.class
+com/treasurehunt/clients/user/UserRegistrationRequest.class
+com/treasurehunt/clients/user/UserDTO.class
+com/treasurehunt/clients/fraud/FraudCheckResponse.class
+com/treasurehunt/clients/notification/NotificationClient.class
+com/treasurehunt/clients/notification/NotificationResponse.class
+com/treasurehunt/clients/notification/NotificationRequest.class
+com/treasurehunt/clients/fraud/FraudClient.class
+com/treasurehunt/clients/user/UserClient.class
