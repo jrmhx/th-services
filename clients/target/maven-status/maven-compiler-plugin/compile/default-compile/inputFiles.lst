@@ -1,9 +1,0 @@
-/home/jeremiah/workplace/th-services/clients/src/main/java/com/treasurehunt/clients/user/UserClient.java
-/home/jeremiah/workplace/th-services/clients/src/main/java/com/treasurehunt/clients/fraud/FraudClient.java
-/home/jeremiah/workplace/th-services/clients/src/main/java/com/treasurehunt/clients/user/UserRegistrationRequest.java
-/home/jeremiah/workplace/th-services/clients/src/main/java/com/treasurehunt/clients/user/UserResponse.java
-/home/jeremiah/workplace/th-services/clients/src/main/java/com/treasurehunt/clients/fraud/FraudCheckResponse.java
-/home/jeremiah/workplace/th-services/clients/src/main/java/com/treasurehunt/clients/notification/NotificationClient.java
-/home/jeremiah/workplace/th-services/clients/src/main/java/com/treasurehunt/clients/notification/NotificationResponse.java
-/home/jeremiah/workplace/th-services/clients/src/main/java/com/treasurehunt/clients/notification/NotificationRequest.java
-/home/jeremiah/workplace/th-services/clients/src/main/java/com/treasurehunt/clients/user/UserDTO.java
