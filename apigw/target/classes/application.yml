@@ -1,5 +1,6 @@
 server:
   port: 8083
+
 spring:
   application:
     name: api-gateway
@@ -9,9 +10,10 @@ spring:
     gateway:
       routes:
         - id: user
-          uri: lb://USER # only expose USER service to external client.
+          uri: lb://USER
           predicates:
             - Path=/api/v1/user/**
+
 eureka:
   client:
     service-url:
