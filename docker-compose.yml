@@ -116,6 +116,21 @@ services:
       - postgres
       - rabbitmq
 
+  notification2:
+    image: jeremyhsing/notification:latest
+    container_name: notification2
+    ports:
+      - "8084:8082"
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    networks:
+      - spring
+      - postgres
+    depends_on:
+      - zipkin
+      - eureka-server
+      - postgres
+      - rabbitmq
 networks:
   postgres:
     driver: bridge
