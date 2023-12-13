@@ -33,23 +33,6 @@ dependency-reduced-pom.xml
 buildNumber.properties
 .mvn/timing.properties
 
-# avoiding IDEs project files #
-.idea
-*.iws
-*.iml
-*.ipr
-*.swp
-*.swo
-*.swl
-*.class
-*.swn
-*.splt
-*.spyproject
-*.metadata
-*.classpath
-*.project
-*.settings
-*.factorypath
 
 # Avoiding OS-specific files
 .DS_Store
