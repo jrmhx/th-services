@@ -59,9 +59,23 @@ Now the database should be all set, run `docker compose up -d` again to start al
 ## Minoring Dashboards
 
 1. Database Management: PgAdmin http://localhost:5050/
+
+   ![pg](./documents/images/pgd.png)
+
 2. Services Discovery: Eureka http://localhost:8761/
+
+   ![erk](./documents/images/erkd.png)
+
 3. Distribute Tracing: Zipkin http://localhost:9411/
+
+   ![zipkind](./documents/images/zipkind.png)
+
+   ![zipkind2](./documents/images/zipkind2.png)
+
 4. Message Queue: RabbitMQ http://localhost:15672/ (username&password: guest)
+
+   ![rmqd](./documents/images/rmqd.png)
+
 
 ## Test
 
