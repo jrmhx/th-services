@@ -36,7 +36,7 @@ docker compose up -d
 > If you inspect the logs by `docker logs user`, you can find error logs about cannot find database.
 > Don't be worry. You just need set up those databases as following:
 
-#### Initial database setup:
+### Initial database setup:
 
 This project use [PgAdmin](https://www.pgadmin.org/) for managing postgreSQL database.
 Please make sure the `postgres` and `pgadmin` containers are still running. Then open http://localhost:5050/ in your browser.
