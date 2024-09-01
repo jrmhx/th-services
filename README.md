@@ -1,7 +1,7 @@
 
 ## Introduction
 This is a microservices project. Using:
-1. [Spring Boot](https://spring.io/projects/spring-boot) and [Spring Cloud](https://spring.io/projects/spring-cloud) as the framework.
+1. [Spring Cloud](https://spring.io/projects/spring-cloud).
 2. [PostgreSQL](https://hub.docker.com/layers/library/postgres/alpine3.19/images/sha256-33ae62f11f31af2f2c29f02d1c3bea0727287794ec4323632bdd559256f7ed00) as the database
 3. [Eureka](https://spring.io/guides/gs/service-registration-and-discovery/) and [OpenFeign](https://spring.io/projects/spring-cloud-openfeign) for service discovery and load balancing
 4. [Spring Cloud Sleuth](https://spring.io/projects/spring-cloud-sleuth) and [Zipkin](https://zipkin.io/) for distribute tracing
